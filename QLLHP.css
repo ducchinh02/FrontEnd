@@ -65,6 +65,14 @@ body{
     transition: 0.5s all ease;
 }
 
+.btn-m a{
+    text-decoration: none;
+    color: white;
+}
+.btn-m a:hover{
+    text-decoration: none;
+}
+
 /* table */
 .tableform{
     overflow-y: auto;
