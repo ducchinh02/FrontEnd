@@ -1,0 +1,257 @@
+body{
+    font-size: 14px !important;
+    font-family: "Font Awesome 5 Free" !important;
+}
+
+.container{
+    max-width: 100%;
+}
+/* heading */
+.row{
+    height: 50px;
+    background-color: rgb(233, 236, 239);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: flex;
+}
+.row li{
+    list-style: none;
+    line-height: 50px;
+    padding-left: 1.1rem;
+}
+.panel{
+    display: flex;
+}
+.text{
+    width: 100%;
+}
+.panel p{
+    padding-left: 0.5rem;
+    line-height: 38px;
+}
+.panel .button{
+    width: 90.5%;
+    text-align: right!important;
+    position: relative;
+}
+.panel .btn-n{
+    width: 147px;
+    height: 38px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+.btn-n:hover{
+    background-color: #138496;
+    border-color: #117a8b;
+    transition: 0.5s all ease;
+}
+.panel .btn-m{
+    width: 170px;
+    height: 38px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+.btn-m:hover{
+    background-color: #218838;
+    border-color: #1e7e34;  
+    transition: 0.5s all ease;
+}
+
+/* table */
+.tableform{
+    overflow-y: auto;
+    position: relative;
+}
+#maincontent{
+    background:rgb(4, 102, 200);
+    color: white;
+}
+th , #text-center{
+    text-align: center;
+
+}
+a{
+    text-decoration: none;
+    color: #007bff;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+img{
+    max-width: 100%;
+}
+#icon{
+    padding-left:.75rem ;
+}
+.fix{
+    margin-right: 1rem!important;
+    margin-bottom: .25rem!important;
+}
+.delete{
+    margin-bottom: .25rem!important;
+}
+
+/* page */
+ul.center{
+   justify-content: center;
+}
+.page-item{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.page-item a:hover{
+    text-decoration: none;
+    background:none;
+}
+#active{
+    color: #000000;
+}
+
+/* card */
+.fullcard{
+    max-width: 100%;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    border-style: solid;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.fullcard.filter{
+    transition: all 0.3s ease;
+    max-height:350px;
+    margin-bottom: 1rem;
+
+}
+
+.card-header{
+    padding: .75rem 1.25rem;
+    height: auto;
+    background:rgb(4, 102, 200);
+    color: white;
+    font-weight: bold;
+}
+.card-body{
+    margin-top: 1rem;
+    padding: .75rem .75rem;
+}
+.card-content{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.card-text{
+    width:7.5%;
+    margin-right: 1%;
+}
+.select{
+    margin-right: 1%;
+}
+.select select,input{
+    width: 223px;
+}
+.card-text2{
+    width:15%;
+    margin-right: 1%;
+}
+.select2{
+    margin-right: 1%;
+}
+.select2 select,input{
+    width: 223px;
+}
+.button-tool{
+    width: 73.5%;
+    text-align: right;
+}
+.btn-reset{
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.btn-reset:hover{
+    background-color: rgb(224, 168, 0);
+    transition: 0.5s all ease;
+}
+.btn-search{
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.btn-search:hover{
+    background-color: #138496;
+    border-color: #117a8b;
+    transition: 0.5s all ease;
+}
+
+/*modal */
+.modal-header,.modal-body,.modal-footer{
+    display: block;
+}
+.modal-content{
+    width: 90%;
+    margin: 0 auto;
+}
+.modal-header{
+    background:rgb(4, 102, 200);
+    color: white;
+    padding: .4rem .4rem;
+}
+.modal-body{
+    font-size: 18px;
+}
+@media(max-width: 48em){
+    .body{
+        height: 60px;
+    }
+    .panel{
+        display: block;
+    }
+    .panel .text{
+        text-align: center;
+    }
+    .panel p{
+        padding-left: 0rem;
+        line-height: 0px;
+        margin-bottom: 2px;
+    }
+    .panel .button{
+        width: 100%;
+        text-align: center!important;
+    }
+    .button-tool{
+        width: 100%;
+    }
+    .card-content{
+        display: block;
+    }
+    .card-text,.card-text2{
+        width:100%;
+        margin-right: 1%;
+    }
+    .select select,input,.select2 select,input{
+      width: 100%;
+    }
+    .fullcard.filter{
+        max-height:945px;
+    }
+}
+@media(min-width: 48.0625em) and (max-width:69em){
+    .fullcard.filter{
+         max-height:500px;
+    }
+}

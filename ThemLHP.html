@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://icons.iconarchive.com/icons/graphicloads/100-flat/16/student-icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="ThemLHP.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Thêm lớp học phần</title>
+</head>
+<body>
+    <div class="container">
+
+       <!-- Modal-->
+       <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 6rem;">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header" id="text-center">
+               <h6 class="modal-title" id="exampleModalLabel">Xác nhận xóa</h6>
+             </div>
+             <div class="modal-body" id="text-center">
+               Chắc chắn xóa học phần <b>X</b> thuộc học phần <b>Y</b>?
+             </div>
+             <div class="modal-footer" id="text-center" style="border: none;">
+               <button type="button" class="btn btn-danger">Xóa</button>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+             </div>
+           </div>
+         </div>
+       </div>
+
+         <!-- Thêm lớp học phần -->
+        <div class="fullcard" id="card">
+            <div class="card text-center">
+               <div class="card-header">
+                  Thêm lớp học phần
+               </div>
+               </div>
+               <div class="card-body">
+                  <div class="card-content">
+                      <div class="card-text">
+                      <label for="mySelect1" style="font-weight: bold;">Thuộc học phần</label>
+                      </div>
+                      <div class="select">
+                      <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                           <option value="1" selected>Nhập môn hệ cơ sở dữ liệu - CSDL</option>
+                      </select>
+                      </div>
+                   
+               </div>
+      
+            <div class="card-content">
+                  <div class="card-text">
+                  <label for="mySelect1" style="font-weight: bold;">Tên lớp học phần</label>
+                  </div>
+                  <div class="select">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                        <option value="1" selected>CSDL_D2020_1</option>
+                   </select>
+                  </div>
+                 
+           </div>
+
+           <div class="card-content">
+            <div class="card-text">
+            <label for="mySelect1" style="font-weight: bold;">Giảng viên (1)</label>
+            </div>
+            <div class="select">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                  <option value="1" selected>Ngô Thúy Ngân</option>
+             </select>
+            </div>
+           
+     </div>
+
+     <div class="card-content">
+        <div class="card-text">
+        <label for="mySelect1" style="font-weight: bold;">Giảng viên (2)</label>
+        </div>
+        <div class="select">
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+              <option value="1" selected>Select</option>
+         </select>
+        </div>
+       
+ </div>
+        <div class="card-content">
+            <div class="card-text">
+            <label for="mySelect1" style="font-weight: bold;">Thời gian kết thúc nhập điểm</label>
+            </div>
+            <div class="select">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                <option value="1" selected>02/10/2021</option>
+            </select>
+            </div>
+        
+        </div>
+
+        <div class="card-content">
+            <div class="card-text">
+            <label for="mySelect1" style="font-weight: bold;">Mô tả</label>
+            </div>
+            <div class="select">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            </select>
+            </div>
+        
+        </div>
+
+
+        <div class="card-content">
+            <div class="card-text">
+            <label for="mySelect1" style="font-weight: bold;">Học kì</label>
+            </div>
+            <div class="select">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                <option value="1" selected>1</option>
+                <option value="2" >2</option>
+            </select>
+            </div>
+        
+        </div>
+
+        <div class="card-content">
+            <div class="card-text">
+            <label for="mySelect1" style="font-weight: bold;">Năm học</label>
+            </div>
+            <div class="select">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                <option value="1" selected>2021 - 2022</option>
+            </select>
+            </div>
+        
+        </div>
+        
+                  </div>
+               </div>
+
+             <!-- chi tiết lớp học phần -->
+            <div class="fullcard" id="card">
+                <div class="card text-center">
+                <div class="card-header">
+                    Chi tiết lớp học phần
+                </div>
+                </div>
+                 <div class="content">
+                  <label for="mySelect1" style="font-weight: bold;font-size: 15px;margin-bottom: .75rem;">Thành phần điểm của lớp học phần</label>
+                 <br>
+                  <label for="mySelect1" style="font-weight: bold;">Chọn loại học phần</label>
+                  </div>
+                  <div class="content-form">
+                  <div class="form-check" id="label-form">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="check1()"checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Học phần tiêu chuẩn
+                    </label>
+                    <br><br>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="check2()">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                     Học phần thực hành
+                    </label>
+                    <br><br>
+
+                    
+                    
+
+                  </div>
+                  <div class="form-check" >
+                 
+                    <table class="table table-bordered" id="table">
+                     <thead>
+                        <tr>
+                           <th class="text-center">STT</th>
+                           <th class="text-center">Ký hiệu</th>
+                           <th class="text-center">Thành phần</th>
+                           <th class="text-center">Tỷ lệ (%)</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>1</td>
+                           <td>CC</td>
+                           <td>Chuyên cần</td>
+                           <td style="width: 30%;"> <input type="text" placeholder="10" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                        </tr>
+                        <tr>
+                           <td>2</td>
+                           <td>KT</td>
+                           <td>Kiểm tra </td>
+                           <td style="width: 30%;"> <input type="text" placeholder="30" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                        </tr>
+                        <tr>
+                           <td>3</td>
+                           <td>CK</td>
+                           <td>Thi/BTL</td>
+                           <td style="width: 30%;"> <input type="text" placeholder="60" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                    <table class="table table-bordered" id="table2">
+                        <thead>
+                           <tr>
+                              <th class="text-center">Chọn</th>
+                              <th class="text-center">STT</th>
+                              <th class="text-center">Ký hiệu</th>
+                              <th class="text-center">Thành phần</th>
+                              <th class="text-center">Tỷ lệ (%)</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td> <input type="checkbox" value="" id="flexCheckDefault" style="height: 20px;"></td>
+                              <td>1</td>
+                              <td>KT1</td>
+                              <td>Kiểm tra 1</td>
+                              <td style="width: 30%;"> <input type="text" placeholder="20" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                           </tr>
+                           <tr>
+                            <td> <input type="checkbox" value="" id="flexCheckDefault" style="height: 20px;"></td>
+                              <td>2</td>
+                              <td>KT2</td>
+                              <td>Kiểm tra 2</td>
+                              <td style="width: 30%;"> <input type="text" placeholder="20" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                           </tr>
+                           <tr>
+                            <td> <input type="checkbox" value="" id="flexCheckDefault" style="height: 20px;"></td>
+                              <td>3</td>
+                              <td>KT3</td>
+                              <td>Kiểm tra 3</td>
+                              <td style="width: 30%;"> <input type="text" placeholder="20" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                           </tr>
+                           <tr>
+                            <td> <input type="checkbox" value="" id="flexCheckDefault" style="height: 20px;"></td>
+                            <td>4</td>
+                            <td>KT1</td>
+                            <td>Kiểm tra 4</td>
+                            <td style="width: 30%;"> <input type="text" placeholder="20" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                         </tr>
+                         <tr>
+                            <td> <input type="checkbox" value="" id="flexCheckDefault" style="height: 20px;"></td>
+                            <td>5</td>
+                            <td>KT5</td>
+                            <td>Kiểm tra 5</td>
+                            <td style="width: 30%;"> <input type="text" placeholder="20" style="width:50%;text-align: center;justify-self:center;display: block;margin: auto;"></td>
+                         </tr>
+                        </tbody>
+                     </table>
+                     <button type="button" class="btn btn-m">Lưu thành phần điểm</button>
+                  </div>
+                </div>
+               
+                <hr>
+                 <!-- giai đoạn học -->
+                <div class="table-form">
+                    <label for="mySelect1" style="font-weight: bold;font-size: 15px;margin-bottom: .75rem;">Danh sách giai đoạn học</label>
+                    <table class="table table-bordered" id="HP">
+                        <thead id="maincontent">
+                           <tr>
+                              <th>STT</th>
+                              <th>Thời gian bắt đầu</th>
+                              <th>Thời gian kết thúc</th>
+                              <th>Thứ</th>
+                              <th>Tiết bắt đầu</th>
+                              <th>Tiết kết thúc</th>
+                              <th>Địa điểm</th>
+                              <th>Thao tác</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td id="text-center">1</td>
+                              <td>16/08/2021</td>
+                              <td>28/11/2021</td>
+                              <td>6</td>
+                              <td>6</td>
+                              <td>8</td>
+                              <td>A3-210</td>
+                              <td id="icon"> <a href="#" data-toggle="modal" data-target="#myModal"><img src="https://ducchinh0510.000webhostapp.com/webprv/Delete.png" class="delete"></a></td>
+                           </tr>
+                          
+                        </tbody>
+                     </table>
+                    </div>
+                    <div class="table-form">
+                        <label for="mySelect1" style="font-weight: bold;font-size: 15px;margin-bottom: .75rem;">Thêm giai đoạn học</label>
+                        </div>
+                        <div class="card-body">
+                        <div class="card-content">
+                            <div class="card-text">
+                            <label for="mySelect1" style="font-weight: bold;">Thời gian bắt đầu</label>
+                            </div>
+                            <div class="select">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                                <option value="1" selected>Select</option>
+                            </select>
+                            </div>
+                         
+                     </div>
+            
+                  <div class="card-content">
+                        <div class="card-text">
+                        <label for="mySelect1" style="font-weight: bold;">Thời gian kết thúc</label>
+                        </div>
+                        <div class="select">
+                          <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                            <option value="1" selected>Select</option>
+                         </select>
+                        </div>
+                       
+                 </div>
+      
+                 <div class="card-content">
+                  <div class="card-text">
+                  <label for="mySelect1" style="font-weight: bold;">Tiết bắt đầu</label>
+                  </div>
+                  <div class="select">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                        <option value="1" selected>Select</option>
+                   </select>
+                  </div>
+                 
+           </div>
+      
+           <div class="card-content">
+              <div class="card-text">
+              <label for="mySelect1" style="font-weight: bold;">Tiết kết thúc</label>
+              </div>
+              <div class="select">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                    <option value="1" selected>Select</option>
+               </select>
+              </div>
+             
+       </div>
+              <div class="card-content">
+                  <div class="card-text">
+                  <label for="mySelect1" style="font-weight: bold;">Thứ</label>
+                  </div>
+                  <div class="select">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                    <option value="1" selected>Select</option>
+                  </select>
+                  </div>
+              
+              </div>
+      
+              <div class="card-content">
+                  <div class="card-text">
+                  <label for="mySelect1" style="font-weight: bold;">Địa điểm</label>
+                  </div>
+                  <div class="select">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                        <option value="1" selected>Select</option>
+                      </select>
+                  </select>
+                  </div>
+              
+              </div>
+              <div class="button-m">
+              <button type="button" class="btn btn-m btnn">Lưu giai đoạn</button>
+              </div>
+              <br>
+                </div>
+                </div>
+                <div class="button">
+                <button type="button" class="btn btn-m" style="float: none;margin-right: 0%;">Thêm lớp học phần</button>
+                </div>
+    </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+      <script src="QLLHP.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="ThemLHP.js"></script>
+</body>
+</html>
