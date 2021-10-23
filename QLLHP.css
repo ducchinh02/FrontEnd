@@ -35,8 +35,6 @@ body{
     position: relative;
 }
 .panel .btn-n{
-    width: 147px;
-    height: 38px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -52,8 +50,6 @@ body{
     transition: 0.5s all ease;
 }
 .panel .btn-m{
-    width: 170px;
-    height: 38px;
     border: none;
     outline: none;
     cursor: pointer;
