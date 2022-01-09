@@ -2,20 +2,18 @@ const header_sticky = document.querySelector('.header-sticky');
 const icon = document.querySelectorAll('.menuActive');
 const backToTop = document.querySelector('.backToTop');
 
-const box = document.querySelectorAll('.box-margin');
-
-box[3].style.top = `calc(${box[0].clientHeight}px + 20px)`;
-box[4].style.top = `calc(${box[1].clientHeight}px + 20px)`;
-box[5].style.top = `calc(${box[2].clientHeight}px + 20px)`;
-box[6].style.top = `calc(${box[0].clientHeight}px + ${box[3].clientHeight}px + 40px)`;
-box[7].style.top = `calc(${box[1].clientHeight}px + ${box[4].clientHeight}px + 40px)`;
-box[8].style.top = `calc(${box[2].clientHeight}px + ${box[5].clientHeight}px + 40px)`;
-
 backToTop.addEventListener("click",scroll);
 function scroll(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+const box_margin = document.querySelectorAll('.box-margin');
+const box = document.querySelectorAll('.box');
+
+box_margin[5].style.marginTop = `${box[2].clientHeight - box_margin[2].clientHeight}px`
+box_margin[6].style.marginTop = `${box[3].clientHeight - box_margin[3].clientHeight}px`
+box_margin[8].style.marginTop = `${box[5].clientHeight - box_margin[5].clientHeight}px`
 
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
@@ -34,4 +32,21 @@ icon.forEach((item)=>{
         item.classList.toggle('active-icon')
     })
 })
+
+window.addEventListener('resize', reportWindowSize);
+
+function reportWindowSize(){
+    const box_margin = document.querySelectorAll('.box-margin');
+    const box = document.querySelectorAll('.box');
+    
+    box_margin[5].style.marginTop = `${box[2].clientHeight - box_margin[2].clientHeight}px`
+    box_margin[6].style.marginTop = `${box[3].clientHeight - box_margin[3].clientHeight}px`
+    box_margin[8].style.marginTop = `${box[5].clientHeight - box_margin[5].clientHeight}px`
+
+    if( box_margin[5].style.marginTop === "0px"){
+        box_margin[5].style.marginTop = `${box[3].clientHeight - box_margin[3].clientHeight}px`
+    }
+}
+
+
 
