@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test img</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+    <div class="img">
+        <div class="showImg">
+            <img v-bind:src="selectImg.img" alt="">
+        </div>
+        <div class="img-detail">
+            <div class="img-header mgBt">
+                <h2>Combo ảnh treo tường tháng {{selectImg.name}}</h2>
+            </div>
+            <div class="quantily mgBt">
+                Số lượng : {{selectImg.quantily}}
+            </div>
+            <div class="price mgBt">
+                Giá : {{selectImg.price}} VND
+            </div>
+            <div class="select-combo mgBt">
+                <div class="combo-item" v-for="(img,index) in listImg" v-on:click="handleSelect(index)">
+                    <img v-bind:class="{selected : selectedImg == index}" v-bind:src="img.img" alt="">
+                </div>
+            </div>
+            <div class="buy">
+                <button  v-on:click="buy()" type="submit" class="addToCart" value="Mua ngay">Mua ngay</button>
+                <div class="choose-quantily">
+                    <span v-on:click="decrease()" class="decrease"><ion-icon name="remove-outline"></ion-icon></span>
+                    <span class="product-quantily">{{ count }}</span>
+                    <span v-on:click="increase()" class="increase"><ion-icon name="add"></ion-icon></span>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.img',
+            data: {
+                selectedImg: 1,
+                count : 1,
+                listImg: [
+                    {
+                        img: 'k2.jpg',
+                        quantily: 3,
+                        price: '200.000',
+                        name: '2'
+                    },
+                    {
+                        img: 'k3.jpg',
+                        quantily: 1,
+                        price: '150.000',
+                        name: '3'
+                    },
+                    {
+                        img: 'k4.jpg',
+                        quantily: 5,
+                        price: '250.000',
+                        name: '4'
+                    }
+                ]
+            },
+            methods: {
+                handleSelect(index) {
+                    this.selectedImg = index
+                    this.count = 1
+                } ,
+                decrease(){
+                    if(this.count <= 1){
+                        alert('Số lượng hàng tối thiểu phải là 1')
+                    }
+                    else{
+                    return this.count--
+                    }
+                    
+                },
+                increase(){
+                    let index = this.selectedImg
+                    if(this.count >= this.listImg[index].quantily ){
+                        alert('Đã đạt số lượng hàng có trong kho')
+                    }
+                    else{
+                    return this.count++
+                    }
+                },
+                buy(){
+                    alert(`Bạn đã đặt mua ${this.count} sản phẩm này`)
+                }
+            },
+            computed: {
+                selectImg() {
+                    let index = this.selectedImg
+                    return this.listImg[index]
+                },
+               
+            }
+        })
+    </script>
+</body>
+
+</html>

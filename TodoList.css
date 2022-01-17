@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hydrated{
+    vertical-align: middle;
+    color: #fff;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    font-size: 18px;
+    color: #000;
+}
+.app{
+    width: 30%;
+    margin: 50px auto;
+}
+.input-task{
+      position: relative;
+}
+.app input{
+    outline: none;
+    padding: 10px 125px 10px 20px;
+    width: 100%;
+    font-size: 18px;
+    transition: all .5s ease;
+    border: 1px solid #383838;
+    border-top-right-radius:10px ;
+    border-bottom-right-radius:10px ;
+}
+.app .button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    
+}
+.new-task{
+    border-right:0.5px solid #fff!important;
+}
+.app input:focus{
+    border-color: darkorchid;
+    border-top-left-radius:10px ;
+    border-bottom-left-radius:10px ;
+}
+.app button:hover{
+    background-color: rgb(131, 21, 185);
+}
+.new-task,.search-task{
+    border: none;
+    padding: 11px 20px;
+    font-size: 18px;
+    outline: none;
+    background-color: darkorchid;
+    border: none;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.list-task{
+    padding: 0;
+    background-color: darkorchid;
+    color: #fff;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 10px;
+    transition: all .3s ease;
+}
+.list-task::after{
+    content: "";
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 15px 20px;
+    border-style: solid;
+    border-color: transparent transparent darkorchid transparent;
+}
+.task{
+    list-style: none;
+    padding: 15px;
+    border-bottom: 1px solid #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.delete,.edit{ 
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    outline: none;
+    background-color: darkorchid;
+    border: none;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.active{
+    background-color: #a97dde;
+}

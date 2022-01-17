@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="TodoList.css">
+</head>
+
+<body>
+    <div class="app">
+        <p v-show="showCount">Tìm thấy <b>{{ count }}</b> bản ghi</p><br>
+        <div class="input-task">
+            <input type="text" v-model='taskName' placeholder="Enter your task"
+                v-on:keyup.enter='addTask()'>
+            <div class="button">
+                <button class="new-task" type="submit" v-on:click="addTask()">
+                    <ion-icon name="add-circle"></ion-icon>
+                </button>
+                <button class="search-task" type="submit" v-on:click="search()">
+                    <ion-icon name="search"></ion-icon>
+                </button>
+            </div>
+        </div>
+        <ul class="list-task" v-show='show'>
+            <li class="task" v-for='(item , index) in tasks'>
+                {{index + 1 + '. '}} {{item.title}}
+                <div class="btn-task">
+                    <button class="edit" v-on:click='editTask(index)'>
+                        <ion-icon name="pencil"></ion-icon>
+                    </button>
+                    <button class="delete" v-on:click='deleteTask(index)'>
+                        <ion-icon name="trash"></ion-icon>
+                    </button>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+
+        var todoList = new Vue({
+            el: '.app',
+            data: {
+                taskName: '',
+                tasks: [],
+                show: false,
+                count: 0,
+                showCount: false,
+                edit: null
+            },
+            methods: {
+                addTask() {
+                    if (this.edit == null) {
+                        if (this.taskName != '') {
+                            this.tasks.push({
+                                title: this.taskName
+                            });
+                            this.show = true,
+                            this.showCount = false
+                        }
+                    }
+                    else {
+                        this.tasks[this.edit].title = this.taskName
+                        this.edit = null
+                    }
+                    this.taskName = ''
+                    const task = document.querySelectorAll('.task');
+                    for (let i = 0; i < task.length; i++) {
+                        task[i].classList.remove('active')
+                    }
+                },
+                deleteTask(index) {
+                    this.tasks.splice(index, 1)
+                    if (this.tasks == 0) {
+                        this.show = false
+                    }
+                    const task = document.querySelectorAll('.task');
+                    for (let i = 0; i < task.length; i++) {
+                        task[i].classList.remove('active')
+                    }
+                    this.showCount = false
+                    this.taskName = ''
+
+                },
+                search() {
+                    return this.tasks.filter((item, index) => {
+                        let value = item.title.toLowerCase().includes(this.taskName.toLowerCase());
+                        const task = document.querySelectorAll('.task');
+                        for (let i = 0; i < task.length; i++) {
+                            if (value) {
+                                task[index].classList.add('active')
+                            }
+                            else {
+                                task[index].classList.remove('active')
+                            }
+                        }
+                        this.showCount = true
+                        const active = document.querySelectorAll('.task.active')
+                        this.count = active.length
+                    })
+                },
+                editTask(index) {
+                    this.taskName = this.tasks[index].title
+                    this.edit = index
+                    this.showCount = false
+                    const task = document.querySelectorAll('.task');
+                    for (let i = 0; i < task.length; i++) {
+                        task[i].classList.remove('active')
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

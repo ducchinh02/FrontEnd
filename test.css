@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    font-size: 18px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+.img{
+    display: flex;
+    width: 80%;
+}
+.showImg,.img-detail{
+    width: 50%;
+}
+.img-detail{
+    padding: 0 50px ;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.mgBt{
+    margin-bottom: 30px;
+}
+.select-combo{
+    display: flex;
+    justify-content: space-between;
+}
+.price{
+    font-weight: 600;
+    color: #c74817;
+}
+.combo-item{
+    width: 30%;
+}
+.combo-item img{
+    padding: 3px;
+    transition: all .5s ease;
+   
+}
+.selected{
+    
+    background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+.buy,.choose-quantily,.decrease,.increase{
+    display: flex;
+    align-items: center;
+}
+.addToCart{
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .5s ease;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.addToCart:hover{
+    color: #fff;
+}
+.addToCart::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    width: 0;  
+    top: 0;
+    left: 50%;
+    right: 50%;
+    height: 100%;
+    transition: all .5s ease;
+}
+.addToCart:hover::before{
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.choose-quantily{
+    margin-left: 50px;
+}
+.decrease,.increase{
+    cursor: pointer;
+}
+span + span {
+    margin-left: 25px;
+}
+.product-quantily{
+    padding: 3px 15px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+@media (max-width:1024px) {
+    .img{
+        flex-direction: column;
+    }
+    .img-detail{
+        padding: 20px 0;
+    }
+    .img-detail{
+       width: 100%;
+    }
+    .showImg{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
